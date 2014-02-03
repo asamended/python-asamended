@@ -2,9 +2,8 @@ Pygments==1.6
 argparse==1.2.1
 lice==0.4
 pudb==2013.5.1
-requests==2.2.0
 six==1.5.2
 wsgiref==0.1.2
 networkx==1.8.1
--e git+git://github.com/twneale/tater.git@asamended-v0.2#egg=tater
+tater==0.02
 requests==2.2.1

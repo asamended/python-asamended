@@ -11,8 +11,7 @@ LOGGING_CONFIG = {
         },
         'api_call': {
             'format': (
-                '%(asctime)s [%(levelname)s] %(message)s in %(pathname)s `%(funcName)s`:'
-                '[status=%(status)s] %(method)s %(url)s'),
+                '%(asctime)s [%(levelname)s] %(message)s in %(pathname)s `%(funcName)s`: '),
             'datefmt': '%H:%M:%S'
         }
     },

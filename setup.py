@@ -14,6 +14,7 @@ setup(**{
     "packages": [
         'asamended',
         ],
+    "install_requires": ["tater", "networkx", "requests"],
     "author": "Thom Neale",
     "author_email": "twneale@gmail.com",
     "packages": find_packages(exclude=['tests*']),

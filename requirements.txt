@@ -4,8 +4,7 @@ lice==0.4
 pudb==2013.5.1
 requests==2.2.0
 six==1.5.2
--e git+git@github.com:twneale/tater.git@9b13d60ac401fb2f49e394b3202f9c5b1b38b50c#egg=tater-dev
-urwid==1.1.2
 wsgiref==0.1.2
 networkx==1.8.1
-
+-e git+git://github.com/twneale/tater.git@asamended-v0.2#egg=tater
+requests==2.2.1

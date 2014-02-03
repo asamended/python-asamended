@@ -6,7 +6,7 @@ long_description = """This package is a Client library for the asamended.com API
 """
 
 appname = "asamended"
-version = "0.03"
+version = "0.04"
 
 setup(**{
     "name": appname,

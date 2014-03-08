@@ -10,6 +10,8 @@ def descendants(ident=None, *args, **kwargs):
     ident = ident or '/us/usc'
     data = client.descendants(ident, *args, **kwargs)
     hydrated = fromdata(data)
+    if not hydrated:
+        return
     ident_node = hydrated.find().filter(ident=ident).next()
     return ident_node
 
@@ -20,6 +22,8 @@ def descendants_only(ident=None, *args, **kwargs):
     ident = ident or '/us/usc'
     data = client.descendants_only(ident, *args, **kwargs)
     hydrated = fromdata(data)
+    if not hydrated:
+        return
     ident_node = tree.find().filter(ident=ident).next()
     return ident_node
 
@@ -48,6 +52,8 @@ def ancestors(ident, *args, **kwargs):
 
     data = client.ancestors(stringy_ident, *args, **kwargs)
     hydrated = fromdata(data)
+    if not hydrated:
+        return
 
     if listy_ident is not None:
         return hydrated.find().filter(ident__in=listy_ident)

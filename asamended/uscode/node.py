@@ -108,6 +108,8 @@ def fromdata(data):
     steps for hydrating api responses. For example, running the visitor
     annotates the data with the necessary info to display basic citations.
     '''
+    if not data['response']:
+        return
     tree = Node.fromdata(data['response'])
     CitationMetadataVisitor().visit(tree)
     return tree

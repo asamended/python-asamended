@@ -1,6 +1,7 @@
 import os
 import urllib
 import urlparse
+import logging
 
 import requests
 
@@ -8,6 +9,9 @@ from tater.utils import CachedAttr
 
 from asamended.config import logging
 from asamended.uscode.search import SearchResult
+
+
+logging.basicConfig(level=logging.DEBUG)
 
 
 class UserKeyRequired(Exception):
@@ -36,10 +40,8 @@ class Client(object):
         '''Adds user_token to url and GETs it.
         '''
         params.update(user_key=self.user_key)
-        self.logger.info('API Call: [GET] %s %r' % (url, params))
         resp = requests.get(url, params=params)
         extra = dict(url=resp.url, method='GET', status=resp.status_code)
-        self.logger.info('... status: %s %s' % (resp.status_code, resp.url))
         return resp
 
     def get_resource(self, resource_name, **params):

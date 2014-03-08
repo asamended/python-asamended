@@ -58,5 +58,10 @@ def ancestors(ident, *args, **kwargs):
 def search(*args, **kwargs):
     '''Get ancestors for the specified ident.
     '''
-    data = client.search(*args, **kwargs)
-    return SearchResult(client, data)
+    return client.search(*args, **kwargs)
+
+
+def search_iter(*args, **kwargs):
+    '''Get ancestors for the specified ident.
+    '''
+    return client.search_iter(*args, **kwargs)

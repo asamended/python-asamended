@@ -3,4 +3,5 @@ from asamended.uscode.user import (
     descendants,
     descendants_only,
     ancestors,
-    search)
+    search,
+    search_iter)

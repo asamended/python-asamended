@@ -68,8 +68,16 @@ class Client(object):
         return self.get_resource(
             'descendants_only', ident=ident, max_depth=max_depth, **params).json()
 
-    def ancestors(self, ident, **params):
-        return self.get_resource('ancestors', ident=ident, **params).json()
+    def ancestors(self, ident, **postdata):
+        '''This one has to be a post request to avoid constructing GET
+        querystrings that caused web server errors.
+        '''
+        rel_url = self.resources['ancestors']
+        url = urlparse.urljoin(self.root, rel_url)
+        params = dict(user_key=self.user_key)
+        postdata.update(ident=ident)
+        resp = requests.post(url, params=params, data=postdata)
+        return resp.json()
 
     def search(self, **params):
         facet = params.get('facet')
